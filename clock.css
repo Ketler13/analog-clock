@@ -1,0 +1,218 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+.wrapper {
+    position: relative;
+    width: 800px;
+    height: 600px;
+    margin: 20px auto;
+    border-radius: 5px;
+    background-color: #2f3d6c;
+}
+
+.clock {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    margin: 90px 200px;
+    background-color: #2f3d6c;
+    border-radius: 50%;
+    border: 10px solid #5062a2;
+}
+
+.marker {
+    position: absolute;
+    width: 70px;
+    height: 5px;
+    border-radius: 2px;
+    background-color: #5062a2;
+}
+
+.marker:nth-child(1) {
+    transform: rotateZ(90deg);
+    top: 40px;
+    left: 165px;
+}
+
+.marker:nth-child(2) {
+    transform: rotateZ(90deg);
+    top: 350px;
+    left: 165px;
+}
+
+.marker:nth-child(3) {
+    top: 200px;
+    left: 10px;
+}
+
+.marker:nth-child(4) {
+    top: 200px;
+    left: 320px;
+}
+
+.middle {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    z-index: 11;
+    border-radius: 50%;
+    background-color: #5062a2;
+    left: 180px;
+    top: 182px;
+}
+
+.arrow {
+    position: absolute;
+    border-radius: 2px;
+}
+
+.second {
+    width: 4px;
+    height: 190px;
+    z-index: 10;
+    background-color: #5062a2;
+    left: 198px;
+    top: 40px;
+    transform-origin: 2px 162px;
+/*    animation: rotate 60s infinite steps(60);*/
+}
+
+.minute {
+    width: 8px;
+    height: 150px;
+    background-color: #5062a2;
+    z-index: 9;
+    left: 196px;
+    top: 60px;
+    transform-origin: 4px 142px;
+/*    animation: rotate 3600s infinite steps(60);*/
+}
+
+.hour {
+    width: 10px;
+    height: 110px;
+    background-color: #5062a2;
+    left: 195px;
+    top: 100px;
+    transform-origin: 4px 102px;
+/*    animation: rotate 43200s infinite;*/
+}
+
+.saytime {
+    position: absolute;
+    display: block;
+    width: 80%;
+    background-color: #5062a2;
+    font-size: 30px;
+    font-family: Neucha, cursive;
+    font-weight: 300;
+    top: 520px;
+    padding-left: 20px;
+    color: #2f3d6c;
+    border-radius: 0 3px 3px 0;
+}
+
+.time {
+    font-family: Neucha, cursive;
+    color: #5062a2;
+}
+
+/*@keyframes rotate {
+    100% { transform: rotateZ(360deg);}
+}
+/*@keyframes secondArrow {
+    0% { transform: rotateZ(0deg); }
+    1.6666% { transform: rotateZ(6deg); }
+    3.3333% { transform: rotateZ(12deg); }
+    5.0001% { transform: rotateZ(18deg); }
+    6.6668% { transform: rotateZ(24deg); }
+    8.3335% { transform: rotateZ(30deg); }
+    10.0002% { transform: rotateZ(36deg); }
+    11.6669% { transform: rotateZ(42deg); }
+    13.3336% { transform: rotateZ(48deg); }
+    15.0003% { transform: rotateZ(54deg); }
+    16.667% { transform: rotateZ(60deg); }
+    18.3337% { transform: rotateZ(66deg); }
+    20.0004% { transform: rotateZ(72deg); }
+    21.6671% { transform: rotateZ(78deg); }
+    23.3338% { transform: rotateZ(84deg); }
+    25.0008% { transform: rotateZ(90deg); }
+    26.6672% { transform: rotateZ(96deg); }
+    28.3339% { transform: rotateZ(102deg); }
+    30.0006% { transform: rotateZ(108deg); }
+    31.667% { transform: rotateZ(114deg); }
+    33.334% { transform: rotateZ(120deg); }
+    35.0007% { transform: rotateZ(126deg); }
+    36.6674% { transform: rotateZ(132deg); }
+    38.3341% { transform: rotateZ(138deg); }
+    40.0008% { transform: rotateZ(146deg); }
+    41.6675% { transform: rotateZ(150deg); }
+    43.3342% { transform: rotateZ(156deg); }
+    45.0009% { transform: rotateZ(162deg); }
+    46.6676% { transform: rotateZ(168deg); }
+    48.3343% { transform: rotateZ(174deg); }
+    50.0001% { transform: rotateZ(180deg); }
+    51.6677% { transform: rotateZ(186deg); }
+    53.3344% { transform: rotateZ(192deg); }
+    55.0011% { transform: rotateZ(198deg); }
+    56.6678% { transform: rotateZ(204deg); }
+    58.3345% { transform: rotateZ(210deg); }
+    60.0012% { transform: rotateZ(216deg); }
+    61.6679% { transform: rotateZ(222deg); }
+    63.3346% { transform: rotateZ(228deg); }
+    65.0013% { transform: rotateZ(234deg); }
+    66.68% { transform: rotateZ(240deg); }
+    68.3347% { transform: rotateZ(246deg); }
+    70.0014% { transform: rotateZ(252deg); }
+    71.6681% { transform: rotateZ(258deg); }
+    73.3348% { transform: rotateZ(264deg); }
+    75.0015% { transform: rotateZ(270deg); }
+    76.6682% { transform: rotateZ(276deg); }
+    78.3349% { transform: rotateZ(282deg); }
+    80.0016% { transform: rotateZ(288deg); }
+    81.6683% { transform: rotateZ(294deg); }
+    83.335% { transform: rotateZ(300deg); }
+    85.0017% { transform: rotateZ(306deg); }
+    86.6684% { transform: rotateZ(312deg); }
+    88.3351% { transform: rotateZ(318deg); }
+    90.0018% { transform: rotateZ(324deg); }
+    91.6685% { transform: rotateZ(330deg); }
+    93.3352% { transform: rotateZ(336deg); }
+    95.0019% { transform: rotateZ(342deg); }
+    96.6686% { transform: rotateZ(348deg); }
+    98.3353% { transform: rotateZ(354deg); }
+    100% { transform: rotateZ(360deg); }
+}
+
+@keyframes minuteArrow {
+    0% { transform: rotateZ(0deg);}
+    100% { transform: rotateZ(360deg);}
+}
+
+@keyframes hourArrow {
+    0% { transform: rotateZ(0deg);}
+    100% { transform: rotateZ(360deg);}
+}
